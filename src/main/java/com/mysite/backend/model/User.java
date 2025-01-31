@@ -11,10 +11,12 @@ import lombok.Setter;
 @Getter
 @Setter
 public class User {
-    @Id
-    @GeneratedValue(strategy =  GenerationType.IDENTITY)
+    @Id //기본키 설정
+    @GeneratedValue(strategy =  GenerationType.IDENTITY) //자동 증가 (Auto Increment)
     private Long id;
     private String username;
     private String name;
+
     private String email;
+
 }
