@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 //@ResponseBody 포함(화면 대신 바로 데이터 보냄)
-@RestController   //뷰 없이 바로 데이터
+@RestController   //뷰 없이 바로 데이터 보내줌
 @CrossOrigin("*")
 public class UserController {
 
@@ -45,7 +45,7 @@ public class UserController {
 
     @DeleteMapping("/users/{id}")
     String deleteUser(@PathVariable Long id) {
-        //아이디가 없을 경우 => 예외처리 
+        //아이디가 없을 경우 => 예외처리
         if(!userRepository.existsById(id)) {
             throw new UserNotFoundException(id);
         }
